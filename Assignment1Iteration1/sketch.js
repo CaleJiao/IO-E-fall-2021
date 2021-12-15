@@ -73,16 +73,12 @@ function setup() {
 // End serialport callbacks
 ///////////////////////////////////////////////////////////////////////////
 
-function preload() {
-  soundFormats('mp3', 'ogg');
-  mySound = loadSound('assets/MOON');
-}
 
 osc1 = new p5.TriOsc(); // set frequency and type
-osc1.amp(.5);
-osc2 = new p5.TriOsc(); // set frequency and type
+osc1.amp(.20);
+osc2 = new p5.SinOsc(); // set frequency and type
 osc2.amp(.15);  
-osc3 = new p5.TriOsc(); // set frequency and type
+osc3 = new p5.SinOsc(); // set frequency and type
 osc3.amp(.20);    
 
 fft = new p5.FFT();
@@ -163,13 +159,14 @@ function draw() {
   fill(255,0,0);
   noStroke(); 
   //console.log("diameter0  "  + diameter0);
-  ellipse(300, 300, diameter0*100, diameter0*100);
+
+  ellipse(300, 600, diameter0*200, diameter0*200);
   ellipseMode(RADIUS);    
   fill(0,255,0);
-  ellipse(1000, 1000, diameter1, diameter1);
+  ellipse(1200, 600, diameter1*0.5, diameter1*0.5);
   ellipseMode(RADIUS);
   fill(0,0,255);
-  ellipse(mouseX, mouseY, diameter2, diameter2);
+  ellipse(mouseX, mouseY, diameter2*5, diameter2*5);
 
 
   
@@ -192,9 +189,12 @@ function mouseClicked(){
     getAudioContext().resume();
     console.log("getAudioContext().state" + getAudioContext().state);
   }
- //Calecalecode!!!; 
+ //Calecalectesttesttest!!!; 
   
-
+ function preload() {
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound('assets/MOON');
+}
   function draw() {
   }
   function mouseDragged() {
