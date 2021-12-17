@@ -1,3 +1,6 @@
+// Cale Long Jiao //
+// Project 3 //
+// Dec. 2021//
 var sound,sound1,sound2;
 var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
 	myRec.continuous = true; // do continuous recognition
